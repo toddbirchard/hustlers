@@ -87,8 +87,8 @@ func TestStaticFileServer(t *testing.T) {
 	r := newRouter()
 	mockServer := httptest.NewServer(r)
 
-	// We want to hit the `GET /static/` route to get the index.html file response
-	resp, err := http.Get(mockServer.URL + "/static/")
+	// We want to hit the `GET /templates/` route to get the index.html file response
+	resp, err := http.Get(mockServer.URL + "/templates/")
 	if err != nil {
 		t.Fatal(err)
 	}
