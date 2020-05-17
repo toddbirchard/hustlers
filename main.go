@@ -8,30 +8,32 @@ import (
 	"time"
 )
 
+// Dynamic template values
 type HomeMetaData struct {
 	Title string
-	Tagline string
+	TagLine string
 }
 
+// Render homepage
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
 	data := HomeMetaData {
 		Title: "HUSTLERS",
-		Tagline: "NEW YORK'S FINEST GENTLEMAN CLUB.",
+		TagLine: "NEW YORK'S FINEST GENTLEMAN CLUB.",
 	}
 	tmpl.Execute(w, data)
 }
 
-func newRouter() *mux.Router {
+// Page routes
+func Router() *mux.Router {
 	r := mux.NewRouter()
 	r.HandleFunc("/", IndexHandler)
-	//r.PathPrefix("/").Handler(spa)
 	return r
 }
 
+// Init web server
 func main() {
-	router := newRouter()
-
+	router := Router()
 	srv := &http.Server{
 		Handler: router,
 		Addr:    "127.0.0.1:9100",
