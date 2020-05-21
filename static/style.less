@@ -1,0 +1,87 @@
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #242627;
+  margin: 0;
+  overflow: hidden;
+}
+
+.intro {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  height: fit-content;
+  z-index: 100;
+}
+
+h1,
+h2 {
+  color: #fff;
+  margin: 0 auto;
+  height: fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  font-family: 'geomanistblack';
+}
+
+h1 {
+  font-size: 10em;
+  text-shadow: #fff 0 0 5px, rgba(151,45,255,.3) 0 0 20px, rgba(255,45,149,.3) 0 0 60px, rgba(255,45,149,.3) 0 0 40px;
+  @media(max-width: 800px) {
+    font-size: 18vw;
+  }
+}
+
+h2 {
+  color: #fff;
+  font-size: 2.55em;
+  text-shadow: rgba(151,45,255,.3) 0 0 20px, rgba(255,45,149,.3) 0 0 60px, rgba(255,45,149,.3) 0 0 40px;
+  @media(max-width: 800px) {
+    font-size: 4.6vw;
+  }
+}
+
+p {
+  color: #fff;
+  font-size: 1.3em;
+  font-family: 'geomanistregular';
+  margin-top: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  @media(max-width: 800px) {
+    font-size: 1em;
+  }
+}
+
+video {
+  height: 100%;
+  @media(max-width: 1200px) {
+    left: -40vw;
+    position: absolute;
+    margin: auto;
+  }
+  @media(max-width: 1000px) {
+    left: -70vw;
+    position: absolute;
+    margin: auto;
+  }
+  @media(max-width: 800px) {
+    left: -140vw;
+    position: absolute;
+    margin: auto;
+  }
+}

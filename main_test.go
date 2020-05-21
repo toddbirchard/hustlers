@@ -10,7 +10,7 @@ import (
 func TestRouter(t *testing.T) {
 	// Instantiate the router using the constructor function that
 	// we defined previously
-	r := newRouter()
+	r := Router()
 
 	// Create a new server using the "httptest" libraries `NewServer` method
 	// Documentation : https://golang.org/pkg/net/http/httptest/#NewServer
@@ -52,7 +52,7 @@ func TestRouter(t *testing.T) {
 }
 
 func TestRouterForNonExistentRoute(t *testing.T) {
-	r := newRouter()
+	r := Router()
 	mockServer := httptest.NewServer(r)
 	// Most of the code is similar. The only difference is that now we make a
 	//request to a route we know we didn't define, like the `POST /hello` route.
