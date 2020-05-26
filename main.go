@@ -12,6 +12,9 @@ import (
 type HomeMetaData struct {
 	Title   string
 	TagLine string
+	SiteUrl string
+	ShareImage string
+	Icon string
 }
 
 // Render homepage
@@ -20,6 +23,9 @@ func indexHandler (w http.ResponseWriter, r *http.Request) {
 	data := HomeMetaData{
 		Title:   "HUSTLERS",
 		TagLine: "NEW YORK'S FINEST GENTLEMAN CLUB.",
+		SiteUrl: "https://hustlers.club/",
+		ShareImage: "https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/img/hustlersshare@2x.jpg",
+		Icon: "https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/img/icon.png",
 	}
 	tmpl.Execute(w, data)
 }
