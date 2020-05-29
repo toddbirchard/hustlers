@@ -22,7 +22,7 @@ func indexHandler (w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
 	data := HomeMetaData{
 		Title:   "HUSTLERS",
-		TagLine: "NEW YORK'S FINEST GENTLEMAN CLUB.",
+		TagLine: "NEW YORK'S FINEST GENTLEMAN'S CLUB.",
 		SiteUrl: "https://hustlers.club/",
 		ShareImage: "https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/img/hustlersshare@2x.jpg",
 		Icon: "https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/img/icon.png",
@@ -42,7 +42,7 @@ func main() {
 	router := Router()
 	srv := &http.Server{
 		Handler: router,
-		Addr:    "127.0.0.1:9100",
+		Addr:    "127.0.0.1:9101",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
