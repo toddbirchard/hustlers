@@ -33,25 +33,30 @@
         <h1>{{ .Title }}</h1>
         <h2>{{ .TagLine }}</h2>
     </div>
+
+    <div class="footer">
+        <p>{{ .FooterText }}</p>
+    </div>
+
     <video class="videoObject center" autoplay loop autobuffer muted playsinline id="myVideo">
         <source src="https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/vid/hustlers.mov"
                 type="video/mp4">
     </video>
 </div>
-<script type="text/javascript">
-    var _gauges = _gauges || [];
-    (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '5ec09d48aa5bf01d3b658f87');
-        t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
-        t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-    })();
-</script>
+    <script type="text/javascript">
+        const _gauges = _gauges || [];
+        (function() {
+            const t = document.createElement('script');
+            t.type  = 'text/javascript';
+            t.async = true;
+            t.id    = 'gauges-tracker';
+            t.setAttribute('data-site-id', '5ec09d48aa5bf01d3b658f87');
+            t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+            t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
+            const s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(t, s);
+        })();
+    </script>
 </body>
 
 </html>

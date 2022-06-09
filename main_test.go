@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
@@ -84,7 +85,7 @@ func TestRouterForNonExistentRoute(t *testing.T) {
 }
 
 func TestStaticFileServer(t *testing.T) {
-	r := newRouter()
+	r := mux.NewRouter()
 	mockServer := httptest.NewServer(r)
 
 	// We want to hit the `GET /templates/` route to get the index.html file response
@@ -100,7 +101,7 @@ func TestStaticFileServer(t *testing.T) {
 
 	// It isn't wise to test the entire content of the HTML file.
 	// Instead, we test that the content-type header is "text/html; charset=utf-8"
-	// so that we know that an html file has been served
+	// so that we know that an HTML file has been served
 	contentType := resp.Header.Get("Content-Type")
 	expectedContentType := "text/html; charset=utf-8"
 
