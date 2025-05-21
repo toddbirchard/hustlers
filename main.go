@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
-	"github.com/kib357/less-go"
 	"html/template"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/gorilla/mux"
+	"github.com/kib357/less-go"
 )
 
 // HomeMetaData Dynamic template values
@@ -28,15 +29,14 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		TagLine:    "NEW YORK'S FINEST GENTLEMAN'S CLUB",
 		FooterText: "A Broiest Production™",
 		SiteUrl:    "https://hustlers.club/",
-		ShareImage: "https://storage.cloud.google.com/hustlers/img/hustlersshare@2x.jpg",
-		Icon:       "https://storage.cloud.google.com/hustlers/img/icon.png",
+		ShareImage: "https://storage.googleapis.com/hustlers/img/hustlersshare@2x.jpg",
+		Icon:       "https://storage.googleapis.com/hustlers/img/icon.png",
 	}
 	err := tmpl.Execute(w, data)
 	if err != nil {
 		return
 	}
 }
-
 
 // CompileStylesheets Compile and minify .LESS files
 func CompileStylesheets() {

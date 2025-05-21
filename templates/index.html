@@ -7,8 +7,8 @@
     <title>{{ .Title }}</title>
     <meta name="HandheldFriendly" content="True"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-    <link rel='stylesheet' href='https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/css/style.css'/>
-    <link rel='stylesheet' href='https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/css/fonts.css'/>
+    <link rel='stylesheet' href='/static/css/fonts.css'/>
+    <link rel='stylesheet' href='/static/css/style.css'/>
     <link rel="shortcut icon" type="/img/png" href="{{ .Icon }}"/>
     <meta property="og:site_name" content="{{ .Title }}"/>
     <meta property="og:type" content="website"/>
@@ -28,35 +28,20 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="intro">
-        <h1>{{ .Title }}</h1>
-        <h2>{{ .TagLine }}</h2>
-    </div>
+    <div class="container">
+        <div class="intro">
+            <h1>{{ .Title }}</h1>
+            <h2>{{ .TagLine }}</h2>
+        </div>
 
-    <div class="footer">
-        <p>{{ .FooterText }}</p>
-    </div>
+        <div class="footer">
+            <p>{{ .FooterText }}</p>
+        </div>
 
-    <video class="videoObject center" autoplay loop autobuffer muted playsinline id="myVideo">
-        <source src="https://hackers-content.nyc3.digitaloceanspaces.com/sites/hustlers/vid/hustlers.mov"
-                type="video/mp4">
-    </video>
-</div>
-    <script type="text/javascript">
-        const _gauges = _gauges || [];
-        (function() {
-            const t = document.createElement('script');
-            t.type  = 'text/javascript';
-            t.async = true;
-            t.id    = 'gauges-tracker';
-            t.setAttribute('data-site-id', '5ec09d48aa5bf01d3b658f87');
-            t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
-            t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
-            const s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(t, s);
-        })();
-    </script>
+        <video class="videoObject center" autoplay loop autobuffer muted playsinline id="myVideo">
+            <source src="https://storage.googleapis.com/hustlers/vid/hustlers.mov" type="video/mp4">
+        </video>
+    </div>
 </body>
 
 </html>

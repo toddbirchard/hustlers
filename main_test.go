@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/gorilla/mux"
 )
 
 func TestRouter(t *testing.T) {
@@ -35,7 +36,7 @@ func TestRouter(t *testing.T) {
 	// In the next few lines, the response body is read, and converted to a string
 	defer resp.Body.Close()
 	// read the body into a bunch of bytes (b)
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -71,7 +72,7 @@ func TestRouterForNonExistentRoute(t *testing.T) {
 	// The code to test the body is also mostly the same, except this time, we
 	// expect an empty body
 	defer resp.Body.Close()
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -89,7 +90,7 @@ func TestStaticFileServer(t *testing.T) {
 	mockServer := httptest.NewServer(r)
 
 	// We want to hit the `GET /templates/` route to get the index.html file response
-	resp, err := http.Get(mockServer.URL + "/templates/")
+	resp, err := http.Get(mockServer.URL + "/templates/index.html")
 	if err != nil {
 		t.Fatal(err)
 	}
